@@ -7,10 +7,13 @@ export default function DayList(props) {
   return (
     <DayListItem
       key={dayElement.id}
-      name={dayElement.name}
-      spots={dayElement.spots} 
-      selected={dayElement.name === props.value}
-      setDay={props.onChange} 
+      // name={dayElement.name}
+      // spots={dayElement.spots} 
+      // selected={dayElement.name === props.value}
+      // setDay={props.onChange} 
+      selected={dayElement.name === props.day}
+      setDay={props.setDay}
+      {...dayElement}
     />
     )
   });

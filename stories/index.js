@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
@@ -17,6 +17,7 @@ import Show from "components/Appointment/Show";
 import Confirm from "components/Appointment/Confirm";
 import Status from "components/Appointment/Status";
 import Error from "components/Appointment/Error";
+import Form from "components/Appointment/Form";
 
 storiesOf("Button", module)
   .addParameters({
@@ -126,18 +127,14 @@ storiesOf("InterviewerList", module)
   .add("Initial", () => (
     <InterviewerList
       interviewers={interviewers}
+      setInterviewer={action("setInterviewer")}
     />
   ))
-  .add("Selected", () => (
+  .add("Preselected", () => (
     <InterviewerList
       interviewers={interviewers}
-      value={3}
-    />
-  ))
-  .add("Clickable", () => (
-    <InterviewerList
-      interviewers={interviewers}
-      onChange={action("setInterviewer")}
+      value = {3}
+      onChange={action("onChange")}
     />
   ));
 
@@ -165,7 +162,7 @@ storiesOf("Appointment", module)
     />
   ))
   .add('Status', () => (
-    <Status
+    <Status 
       message="Deleting"
     />
   ))
@@ -175,3 +172,36 @@ storiesOf("Appointment", module)
     onClose={action("onClose")}
     />
   ))
+  .add('Form - create', () => (
+    <Form
+      interviewers={interviewers}
+      onSave={action('onSave')}
+      onCancel={action('onCancel')}
+    />
+  ))    
+  .add('Form - edit', () => (
+    <Form 
+      name="Bob"
+      interviewers={interviewers}
+      value={3}
+      onSave={action('onSave')}
+      onCancel={action('onCancel')}
+    />
+  ))
+  .add("Appointment Empty", () => (
+    <Fragment>
+      <Appointment id={1} time="4pm" />
+      <Appointment time="5pm" />
+    </Fragment>
+  ))
+  .add("Appointment Booked", () => (
+    <Fragment>
+      <Appointment
+        id={1}
+        time="4pm"
+        interview={{ student: "Lydia Miller-Jones", interviewer }}
+      />
+      <Appointment time="5pm" />
+    </Fragment>
+  ))
+  
