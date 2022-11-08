@@ -26,4 +26,15 @@ function getInterview(state, interview) {
   }
 }
 
-module.exports = { matchAppointments, getAppointmentsForDay, getInterview };
+function getInterviewersForDay(state, day) {
+  let interviewersArr = [];
+  state.days.map(dayObject => {
+    if (dayObject.name === day) {
+      dayObject.interviewers.forEach(intId => interviewersArr.push(intId))
+    }
+  })
+  return matchAppointments(state.interviewers, interviewersArr);
+}
+
+
+module.exports = { matchAppointments, getAppointmentsForDay, getInterview, getInterviewersForDay };
