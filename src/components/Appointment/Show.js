@@ -11,8 +11,7 @@ export default function Show(props) {
         <h2 className="text--regular">{props.student}</h2>
         <section className="interviewer">
           <h4 className="text--light">Interviewer</h4>
-          {/* <h3 className="text--regular">{interviewerName}</h3> */}
-          <h3 className="text--regular">{props.interviewer.name}</h3>
+          {/* <h3 className="text--regular">{props.interviewer.name}</h3> */}
         </section>
       </section>
       <section className="appointment__card-right">
@@ -34,7 +33,6 @@ export default function Show(props) {
     </main>
   )
 }
-
 // The Show component should accept the following props:
 // student:String eg. "Lydia Miller-Jones"
 // interviewer:Object we can use the interview object that already exists in stories/index.js for this
