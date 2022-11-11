@@ -50,24 +50,24 @@ export default function useApplicationData() {
 
     let day = {
       ...state.days[dayOfWeek],
-      spots: state.days[dayOfWeek]
+      spots: state.days[dayOfWeek].spots
     };
 
     let days = state.days;
-    days[dayOfWeek] = day;
+    
 
     if (!state.appointments[id].interview) {
       day = {
         ...state.days[dayOfWeek],
-        spots: state.days[dayOfWeek] - 1
+        spots: state.days[dayOfWeek].spots - 1
       }
     } else {
       day = {
         ...state.days[dayOfWeek],
-        spots: state.days[dayOfWeek]
+        spots: state.days[dayOfWeek].spots
       }
     }
-
+    days[dayOfWeek] = day;
     return axios.put(`http://localhost:8001/api/appointments/${id}`, {interview:interview})
     .then(res => {
         setState({...state, appointments, days})
@@ -88,12 +88,11 @@ export default function useApplicationData() {
     }
 
     const dayOfWeek = findDay(state.day);
-
     let day = {
       ...state.days[dayOfWeek],
       spots: state.days[dayOfWeek].spots + 1
     };
-
+    
     let days = state.days;
     days[dayOfWeek] = day;
 
