@@ -12,6 +12,7 @@ The App utilizes  React built-in and custom hooks and allows users to add, edit 
 - A user can change the details of an existing interview by pressing the edit icon
 - A user can cancel an existing interview, a pop-up message will ask to confirm the action before permanently deleting an interview
 - Days display currently remaining spots and capture updates after each modification
+The App utilizes React built-in and custom hooks and allows users to add, edit and delete appointments in real time.
 
 ## Setup
 
