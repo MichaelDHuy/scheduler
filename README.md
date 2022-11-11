@@ -14,6 +14,16 @@ The App utilizes  React built-in and custom hooks and allows users to add, edit 
 - Days display currently remaining spots and capture updates after each modification
 The App utilizes React built-in and custom hooks and allows users to add, edit and delete appointments in real time.
 
+## Screenshots
+
+!["Create an appointment"] (https://github.com/MichaelDHuy/scheduler/blob/master/docs/Create-Appointment.png?raw=true)
+
+!["Create an appointment successfully"] (https://github.com/MichaelDHuy/scheduler/blob/master/docs/Create-Appointment-Successfully.png?raw=true)
+
+!["Delete an appointment"] (https://github.com/MichaelDHuy/scheduler/blob/master/docs/Screen%20Shot%202022-11-11%20at%201.36.06%20AM.png?raw=true)
+
+!["Delete an appointment successfully"] (https://github.com/MichaelDHuy/scheduler/blob/master/docs/Delete-Appointment-Successfully.png?raw=true)
+
 ## Setup
 
 Install dependencies with `npm install`.
