@@ -54,3 +54,6 @@ npm run storybook
 "react-dom": "^16.9.0"
 "react-hooks": "^1.0.1"
 "react-scripts": "3.4.4"
+
+## API github repo
+https://github.com/MichaelDHuy/scheduler-api
